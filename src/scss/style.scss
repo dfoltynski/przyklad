@@ -14,6 +14,8 @@ $secondary-text-color: #8D97AD;
     font-family: 'Playfair Display', serif;
     font-size: 36px;
     color: $primary-text-color;
+
+    padding: 5em 0;
 }
 
 .col--picture {
@@ -22,4 +24,33 @@ $secondary-text-color: #8D97AD;
 
 .col {
     margin: auto 3em;
+}
+
+.row {
+    margin: auto 0;
+}
+
+.desc {
+    width: 75%;
+}
+
+.center {
+    position: absolute;
+    top: 50%;
+
+    transform: translateY(-50%);
+}
+
+
+.col__text--secondary {
+    font-family: 'Lato', serif;
+    font-size: 16px;
+    color: $secondary-text-color;
+    margin: 2.7em auto;
+}
+
+.col__text--primary {
+    font-family: 'Playfair Display', serif;
+    font-size: 27px;
+    color: $primary-text-color;
 }
