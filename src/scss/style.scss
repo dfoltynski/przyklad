@@ -1,0 +1,25 @@
+@import "~bootstrap/scss/bootstrap";
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Playfair+Display:wght@400;700&display=swap');
+
+$primary-text-color: #3E4555;
+$secondary-text-color: #8D97AD;
+
+.container-fluid {
+    height: 100vh;
+}
+
+.container__header {
+    text-align: center;
+    font-weight: bold;
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    color: $primary-text-color;
+}
+
+.col--picture {
+    text-align: right;
+}
+
+.col {
+    margin: auto 3em;
+}
