@@ -16,64 +16,70 @@ $small-font-size-header: 30px;
 $small-font-size-desc-header: 20px;
 $small-font-size-desc-paragraph: 13px;
 
-.container-fluid {
-    height: 100vh;
-}
-
-.container__header {
+@mixin header($color, $size, $tPadding, $bPadding) {
     text-align: center;
     font-weight: bold;
     font-family: "Playfair Display", serif;
-    font-size: $standard-font-size-header;
-    color: $primary-text-color;
+    font-size: $size;
+    color: $color;
 
-    padding-top: 5em;
-    padding-bottom: 8em;
+    padding-top: $tPadding;
+    padding-bottom: $bPadding;
 }
 
-.col--picture {
-    text-align: right;
+.home {
+    height: 100vh;
 
-    position: relative;
-}
+    &__header {
+        @include header($primary-text-color, $standard-font-size-header, 2.4em, 2.4em);
+    }
 
-.container__scissors {
-    position: absolute;
-    z-index: -1;
-}
+    &__scissors {
+        position: absolute;
+        z-index: -1;
+    }
+    .row {
+        .col {
+            &--picture {
+                text-align: right;
 
-.row {
-    margin: auto 0;
-}
+                position: relative;
+            }
+            .center {
+                position: absolute;
+                top: 50%;
 
-.center {
-    position: absolute;
-    top: 50%;
+                transform: translateY(-50%);
+            }
 
-    transform: translateY(-50%);
-}
+            &--desc {
+                margin: auto 3em;
 
-.col--desc {
-    margin: auto 3em;
-}
+                .desc {
+                    &__text--secondary {
+                        font-family: "Lato", serif;
+                        font-size: $standard-font-size-desc-paragraph;
+                        color: $secondary-text-color;
+                        margin: 2.7em auto;
+                    }
 
-.desc__text--secondary {
-    font-family: "Lato", serif;
-    font-size: $standard-font-size-desc-paragraph;
-    color: $secondary-text-color;
-    margin: 2.7em auto;
-}
+                    &__text--primary {
+                        font-family: "Playfair Display", serif;
+                        font-size: $standard-font-size-desc-header;
+                        color: $primary-text-color;
+                    }
+                }
+            }
 
-.desc__text--primary {
-    font-family: "Playfair Display", serif;
-    font-size: $standard-font-size-desc-header;
-    color: $primary-text-color;
-}
+            &__picture--primary {
+                position: absolute;
+                bottom: 0;
+                margin-left: -15%;
+            }
+        }
 
-.col__picture--primary {
-    position: absolute;
-    bottom: 0;
-    margin-left: -15%;
+        margin: auto 0;
+    }
 }
 
 @media screen and (min-width: 1920px) {
@@ -114,7 +120,7 @@ $small-font-size-desc-paragraph: 13px;
 }
 
 @media screen and (max-width: 690px) {
-    .container__scissors {
+    .home__scissors {
         transform: scale(0.6);
     }
 
@@ -150,7 +156,7 @@ $small-font-size-desc-paragraph: 13px;
     .desc__text--secondary {
         font-size: $small-font-size-desc-paragraph;
     }
-    .container__scissors {
+    .home__scissors {
         display: none;
     }
 }
@@ -160,44 +166,87 @@ $small-font-size-desc-paragraph: 13px;
         margin: auto;
     }
 }
-.contact__header {
-    padding-top: 2em;
-    padding-bottom: 3em;
-}
-.contact {
+.content {
     background-color: #f5f7fa;
     // height: auto;
-}
+    height: 100vh;
+    &__header {
+        @include header($primary-text-color, $standard-font-size-header, 2em, 3em);
+    }
 
+    &__price--header {
+        @include header($primary-text-color, 27px, 5em, 1em);
+        font-weight: 400;
+    }
+    .row {
+        .col {
+            &__info {
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+                text-align: center;
 
-.col__info {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    text-align: center;
-}
+                .info__circle {
+                    box-shadow: 0px 3px 7px 0px rgba(0, 0, 0, 0.75);
+                    -webkit-box-shadow: 0px 3px 7px 0px rgba(0, 0, 0, 0.75);
+                    -moz-box-shadow: 0px 3px 7px 0px rgba(0, 0, 0, 0.75);
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 60px;
+                    height: 60px;
+                    background-color: #ffffff;
+                    border-radius: 100px;
+                    text-align: center;
+                    color: #e2536b;
+                    margin: 1em;
 
-.info__circle {
-    box-shadow: 0px 3px 7px 0px rgba(0, 0, 0, 0.75);
-    -webkit-box-shadow: 0px 3px 7px 0px rgba(0, 0, 0, 0.75);
-    -moz-box-shadow: 0px 3px 7px 0px rgba(0, 0, 0, 0.75);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 60px;
-    height: 60px;
-    background-color: #ffffff;
-    border-radius: 100px;
-    text-align: center;
-    color: #e2536b;
-    margin: 1em;
-}
+                    .circle__number {
+                        margin: 0;
+                    }
+                }
 
-.circle__number {
-    margin: 0;
-}
+                .info__text {
+                    font-family: "Lato", serif;
+                    color: $secondary-text-color;
+                }
+            }
 
-.info__text {
-    font-family: "Lato", serif;
-    color: $secondary-text-color;
+            &__price {
+                margin: 1em;
+                &__button {
+                    border: 4px #e2536b solid;
+
+                    padding: 0.5em 7em;
+                    border-radius: 7px;
+                    background-color: transparent;
+
+                    .price {
+                        font-family: "Lato", serif;
+
+                        color: #e2536b;
+                        font-size: 24px;
+                    }
+
+                    .price::after {
+                        content: " ZŁ";
+                    }
+                }
+
+                & {
+                    text-align: center;
+                }
+
+                &__button--active {
+                    border: 4px #29af8a solid;
+
+                    background-color: #29af8a;
+
+                    .price--active {
+                        color: #ffffff;
+                    }
+                }
+            }
+        }
+    }
 }
