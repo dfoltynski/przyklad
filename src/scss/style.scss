@@ -28,6 +28,10 @@ $small-font-size-desc-paragraph: 13px;
     padding-bottom: $bPadding;
 }
 
+@mixin small_header() {
+    
+}
+
 .home {
     min-height: 100vh;
 
@@ -190,6 +194,11 @@ $small-font-size-desc-paragraph: 13px;
         font-weight: 400;
     }
 
+    &__delivery--header {
+            @include header($primary-text-color, 27px, 5em, 1em);
+            font-weight: 400;
+    }
+
     .row {
         text-align: center;
 
@@ -268,5 +277,31 @@ $small-font-size-desc-paragraph: 13px;
                 }
             }
         }
+    }
+
+    @mixin input {
+        border: 2px #E0E6ED solid;
+        border-radius: 10px;
+        
+        font-family: "Lato", serif;
+        padding: 0.7em 1em;
+        margin: 0.7em 1.2em;
+        width: 80%;
+
+        &::placeholder {
+            color: #8D97AD;
+        }
+    }
+
+    .col__input {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+
+        margin: 2em 0;
+    }
+
+    input {
+        @include input()
     }
 }
