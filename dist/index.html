@@ -115,33 +115,58 @@
       </div>
 
       <h4 class="content__delivery--header">Dane do wysyłki</h4>
-      <form>
+      <form class="form">
         <div class="row">
           <div class="col-md">
             <div class="input_personal col__input">
               <input
-                class="input__personal--name"
+                class="input__personal--name input"
                 placeholder="imię nazwisko"
               />
               <input
-                class="input__personal--email"
+                class="input__personal--email input"
                 placeholder="adres e-email"
+                type="email"
               />
-              <input class="input__personal--phone" placeholder="telefon" />
+              <input
+                class="input__personal--phone input"
+                placeholder="telefon"
+                type="tel"
+              />
             </div>
           </div>
 
           <div class="col-md">
             <div class="delivery__info col__input">
-              <input class="input__delivery--street" placeholder="ulica" />
-              <input class="input__delivery--city" placeholder="miasto" />
               <input
-                class="input__delivery--postcode"
+                class="input__delivery--street input"
+                placeholder="ulica"
+              />
+              <input class="input__delivery--city input" placeholder="miasto" />
+              <input
+                class="input__delivery--postcode input"
                 placeholder="kod pocztowy"
               />
             </div>
           </div>
+
+          <p class="row__info special-code">Twój unikalny kod: #143256</p>
         </div>
+
+        <label class="rodo">
+          <input type="checkbox" name="rodo__checkbox" id="rodo__checkbox" class="rodo__checkbox">
+          <p class="rodo__info">
+              Wyrażam zgodę na przetwarzanie moich danych osobowych dla potrzeb
+              niezbędnych do realizacji procesu rekrutacji zgodnie z
+              Rozporządzeniem Parlamentu Europejskiego i Rady (UE) 2016/679 z dnia
+              27 kwietnia 2016 r. w sprawie ochrony osób fizycznych w związku z
+              przetwarzaniem danych osobowych i w sprawie swobodnego przepływu
+              takich danych oraz uchylenia dyrektywy 95/46/WE (RODO).
+            </p>
+        </input>
+        </label>
+
+        <input type="submit" value="WSPIERAM" class="input--submit">
       </form>
     </section>
     <script src="bundle.js"></script>
