@@ -1,4 +1,5 @@
 @import "~bootstrap/scss/bootstrap";
+@import "~include-media/dist/include-media";
 @import url("https://fonts.googleapis.com/css2?family=Lato&family=Playfair+Display:wght@400;700&display=swap");
 
 $primary-text-color: #3e4555;
@@ -28,7 +29,7 @@ $small-font-size-desc-paragraph: 13px;
 }
 
 .home {
-    height: 100vh;
+    min-height: 100vh;
 
     &__header {
         @include header($primary-text-color, $standard-font-size-header, 2.4em, 2.4em);
@@ -38,6 +39,42 @@ $small-font-size-desc-paragraph: 13px;
         position: absolute;
         z-index: -1;
     }
+
+    @include media("<425px") {
+        &__header {
+            font-size: $small-font-size-header;
+        }
+        &__scissors {
+            display: none;
+        }
+    }
+
+    @include media(">1900px") {
+        &__header {
+            font-size: $large-font-size-header;
+        }
+    }
+
+    @include media("<680px") {
+        &__scissors {
+            transform: scale(0.6);
+        }
+
+        &__header {
+            padding-top: 2em;
+        }
+    }
+
+    @include media("<520px") {
+        .container-fluid {
+            width: 100vw;
+        }
+
+        &__header {
+            padding-bottom: 0;
+        }
+    }
+
     .row {
         .col {
             &--picture {
@@ -50,10 +87,42 @@ $small-font-size-desc-paragraph: 13px;
                 top: 50%;
 
                 transform: translateY(-50%);
+
+                @include media("<520px") {
+                    & {
+                        position: relative;
+                        margin: -20% auto;
+                    }
+                }
+            }
+
+            @include media("<1200px") {
+                &--picture {
+                    display: none;
+                }
+            }
+
+            @include media("<1480px") {
+                &__picture--primary {
+                    transform: scale(0.7);
+                    position: absolute;
+                    bottom: 0;
+                    z-index: 2;
+                }
+
+                &__picture--background {
+                    transform: scale(0.6);
+                }
             }
 
             &--desc {
                 margin: auto 3em;
+
+                @include media("<368px") {
+                    & {
+                        margin: 0;
+                    }
+                }
 
                 .desc {
                     &__text--secondary {
@@ -67,6 +136,32 @@ $small-font-size-desc-paragraph: 13px;
                         font-family: "Playfair Display", serif;
                         font-size: $standard-font-size-desc-header;
                         color: $primary-text-color;
+                    }
+
+                    @include media("<425px") {
+                        &__text--primary {
+                            font-size: $small-font-size-desc-header;
+                        }
+
+                        &__text--secondary {
+                            font-size: $small-font-size-desc-paragraph;
+                        }
+                    }
+
+                    @include media("<1200px") {
+                        &__text--secondary {
+                            margin: 1em auto;
+                        }
+                    }
+
+                    @include media(">1900px") {
+                        &__text--primary {
+                            font-size: $large-font-size-desc-header;
+                        }
+
+                        &__text--secondary {
+                            font-size: $large-font-size-desc-paragraph;
+                        }
                     }
                 }
             }
@@ -82,94 +177,10 @@ $small-font-size-desc-paragraph: 13px;
     }
 }
 
-@media screen and (min-width: 1920px) {
-    .container__header {
-        font-size: $large-font-size-header;
-    }
-
-    .desc__text--primary {
-        font-size: $large-font-size-desc-header;
-    }
-
-    .desc__text--secondary {
-        font-size: $large-font-size-desc-paragraph;
-    }
-}
-
-@media screen and (max-width: 1480px) {
-    .col__picture--primary {
-        transform: scale(0.7);
-        position: absolute;
-        bottom: 0;
-        z-index: 2;
-    }
-
-    .col__picture--background {
-        transform: scale(0.6);
-    }
-}
-
-@media screen and (max-width: 1200px) {
-    .col--picture {
-        display: none;
-    }
-
-    .desc__text--secondary {
-        margin: 1em auto;
-    }
-}
-
-@media screen and (max-width: 690px) {
-    .home__scissors {
-        transform: scale(0.6);
-    }
-
-    .container__header {
-        padding-top: 2em;
-    }
-}
-
-@media screen and (max-width: 520px) {
-    .container-fluid {
-        width: 100vw;
-    }
-
-    .container__header {
-        padding-bottom: 0;
-    }
-
-    .center {
-        position: relative;
-        margin: -20% auto;
-    }
-}
-
-@media screen and (max-width: 425px) {
-    .container__header {
-        font-size: $small-font-size-header;
-    }
-
-    .desc__text--primary {
-        font-size: $small-font-size-desc-header;
-    }
-
-    .desc__text--secondary {
-        font-size: $small-font-size-desc-paragraph;
-    }
-    .home__scissors {
-        display: none;
-    }
-}
-
-@media screen and (max-width: 375px) {
-    .col--desc {
-        margin: auto;
-    }
-}
 .content {
     background-color: #f5f7fa;
-    // height: auto;
-    height: 100vh;
+    height: auto;
+    // height: 100vh;
     &__header {
         @include header($primary-text-color, $standard-font-size-header, 2em, 3em);
     }
@@ -178,7 +189,16 @@ $small-font-size-desc-paragraph: 13px;
         @include header($primary-text-color, 27px, 5em, 1em);
         font-weight: 400;
     }
+
     .row {
+        text-align: center;
+
+        &__info {
+            margin-top: 4em;
+            font-family: "Lato", serif;
+            color: $secondary-text-color;
+        }
+
         .col {
             &__info {
                 display: flex;
