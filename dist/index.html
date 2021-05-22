@@ -4,10 +4,11 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Zadanie rekrutacyjne - Dawid Foltyński</title>
   </head>
   <body>
-    <section class="container-fluid home">
+    <main class="container-fluid home">
       <img class="home__scissors" src="./img/scissors.png" alt="scissors" />
       <h1 class="home__header">Lorem ipsum set dolore amet duis sir class!</h1>
       <div class="center">
@@ -45,7 +46,7 @@
           </div>
         </div>
       </div>
-    </section>
+    </main>
     <section class="container-fluid content">
       <h1 class="content__header">Jak możesz się dołożyć?</h1>
       <div class="row">
@@ -165,10 +166,37 @@
             </p>
         </input>
         </label>
+        <br>
 
-        <input type="submit" value="WSPIERAM" class="input--submit">
-      </form>
+        <input type="submit" value="WSPIERAM" class="input--submit"/>
+        <img src="./img/cake.png" alt="cake" class="form__image">
+    </form>
     </section>
+
+    <footer class="container-fluid footer">
+        <p class="footer__text">Poprzednie edycje:</p>
+        <div class="row">
+            <div class="col-2 col__text--edition">Edycja pierwsza</div>
+            <div class="col-2 col__text--edition">Edycja druga</div>
+            <div class="col-2 col__text--edition">Edycja trzecia</div>
+            <div class="col-md col__icons">
+                    <a href="" target="_blank" class="fa fa-youtube"></a>
+                    <a href="" target="_blank" class="fa fa-instagram"></a>    
+            </div>
+        </div>
+        <div class="company">
+
+            <div class="row">
+                <div class="col-md-8">
+                    <p class="col__text">&copy; 2019 Wired leaf  sp. z o.o. wszystkie prawa zastrzeżone</p>
+                </div>
+                <div class="col-md-4">
+                    <p class="col__text">Polityka prywatności</p>
+                </div>
+            </div>
+        </div>
+
+    </footer>
     <script src="bundle.js"></script>
   </body>
 </html>
