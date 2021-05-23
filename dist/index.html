@@ -127,14 +127,17 @@
               <small></small>
               <input
                 class="input__personal--email input"
-                placeholder="adres e-email"
-                type="email"
+                placeholder="adres e-mail"
               />
+              <small></small>
               <input
                 class="input__personal--phone input"
                 placeholder="telefon"
                 type="tel"
+                minlength="9"
+                maxlength="9"
               />
+              <small></small>
             </div>
           </div>
 
@@ -144,11 +147,16 @@
                 class="input__delivery--street input"
                 placeholder="ulica"
               />
+              <small></small>
               <input class="input__delivery--city input" placeholder="miast" />
+              <small></small>
               <input
                 class="input__delivery--postcode input"
                 placeholder="kod pocztowy"
-              />
+                minlength="5"
+                maxlength="5"
+                />
+              <small></small>
             </div>
           </div>
 
