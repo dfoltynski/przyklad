@@ -307,6 +307,11 @@ $small-font-size-desc-paragraph: 13px;
         position: relative;
         z-index: 2;
 
+
+        .submit__disabled {
+            background-color: #a2a2a2;
+        }
+
         .col__input {
             align-items: center;
             display: flex;
@@ -326,7 +331,11 @@ $small-font-size-desc-paragraph: 13px;
                 padding: 0.8em 2em;
                 margin: 1em auto;
                 border: none;
+
+
+
             }
+
 
             &__error--message {
                 font-family: "Lato", serif;
