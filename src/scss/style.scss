@@ -1,6 +1,6 @@
 @import "~bootstrap/scss/bootstrap";
 @import "~include-media/dist/include-media";
-@import url("https://fonts.googleapis.com/css2?family=Lato&family=Playfair+Display:wght@400;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Playfair+Display:wght@400;700&display=swap');
 
 $primary-text-color: #3e4555;
 $secondary-text-color: #8d97ad;
@@ -29,7 +29,6 @@ $small-font-size-desc-paragraph: 13px;
 }
 
 @mixin small_header() {
-    
 }
 
 .home {
@@ -195,8 +194,8 @@ $small-font-size-desc-paragraph: 13px;
     }
 
     &__delivery--header {
-            @include header($primary-text-color, 27px, 5em, 1em);
-            font-weight: 400;
+        @include header($primary-text-color, 27px, 5em, 1em);
+        font-weight: 400;
     }
 
     .row {
@@ -276,16 +275,13 @@ $small-font-size-desc-paragraph: 13px;
                     }
                 }
             }
-
-
         }
-        
     }
 
     @mixin input {
-        border: 2px #E0E6ED solid;
+        border: 2px #e0e6ed solid;
         border-radius: 10px;
-        
+
         font-family: "Lato", serif;
         padding: 0.7em 1em;
         margin: 0.7em 1.2em;
@@ -294,25 +290,12 @@ $small-font-size-desc-paragraph: 13px;
         outline: none;
 
         &::placeholder {
-            color: #8D97AD;
+            color: #8d97ad;
         }
 
         &:focus {
-        border: 2px #bdc4cc solid;
-
+            border: 2px #bdc4cc solid;
         }
-    }
-
-    .col__input {
-        align-items: center;
-        display: flex;
-        flex-direction: column;
-
-        margin: 2em 0;
-    }
-
-    .input {
-        @include input()
     }
 
     .special-code {
@@ -323,6 +306,40 @@ $small-font-size-desc-paragraph: 13px;
         text-align: center;
         position: relative;
         z-index: 2;
+
+        .col__input {
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+
+            margin: 2em 0;
+        }
+
+        .input {
+            @include input();
+            &--submit {
+                font-size: 13px;
+                font-family: "Lato", serif;
+                color: #ffffff;
+                background-color: #29af8a;
+                text-align: center;
+                padding: 0.8em 2em;
+                margin: 1em auto;
+                border: none;
+            }
+
+            &__error--message {
+                font-family: "Lato", serif;
+                color: #e2536b;
+                font-weight: 700;
+                font-size: 13px;
+            }
+
+            &__error {
+                border: 2px #e2536b solid;
+            }
+        }
+
 
         &__image {
             position: absolute;
@@ -347,25 +364,12 @@ $small-font-size-desc-paragraph: 13px;
             font-family: "Lato", serif;
             color: $secondary-text-color;
         }
-        
+
         &__checkbox {
             float: left;
             margin-right: 10px;
         }
     }
-
-    .input--submit {
-        font-size: 13px;
-        font-family: "Lato", serif;
-        color: #ffffff;
-        background-color: #29AF8A;
-        text-align: center;
-        padding: 0.8em 2em;
-        margin: 1em auto;
-        border: none;
-    }
-
-
 }
 
 .footer {
@@ -378,52 +382,48 @@ $small-font-size-desc-paragraph: 13px;
         margin: 2em 3em 0.5em;
     }
 
-    .row{
-        .col{
+    .row {
+        .col {
             padding: 0;
 
             &__text {
                 font-family: "Lato", serif;
                 color: $secondary-text-color;
-        margin: 3em;
-
+                margin: 3em;
             }
 
             &__text--edition {
                 font-family: "Lato", serif;
                 color: $secondary-text-color;
                 margin: 0.5em 3em;
-
             }
-    &__icons {
-        text-align: right;
+            &__icons {
+                text-align: right;
 
-        .fa {
-            margin: 0 0.7em;
-            padding: 1em;
-            font-size: 20px;
-            width: 1em;
-            height: 1em;
-            text-align: center;
-            text-decoration: none;
-            border-radius: 100px;
-            background-color: #e4e9ee;
-            color: #97a0b2;
-            
-            &::before {
-                width: 100%;
-                height: 100%;
-                display: flex;
-                justify-content: center;
-                align-items: center;
+                .fa {
+                    margin: 0 0.7em;
+                    padding: 1em;
+                    font-size: 20px;
+                    width: 1em;
+                    height: 1em;
+                    text-align: center;
+                    text-decoration: none;
+                    border-radius: 100px;
+                    background-color: #e4e9ee;
+                    color: #97a0b2;
+
+                    &::before {
+                        width: 100%;
+                        height: 100%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                    }
+                }
             }
         }
-
     }
-
-}
-}
-.company {
-    margin: 5em auto;
-}
+    .company {
+        margin: 5em auto;
+    }
 }
